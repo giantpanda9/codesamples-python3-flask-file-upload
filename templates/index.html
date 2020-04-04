@@ -1,0 +1,62 @@
+<!--templates/index.html-->
+<!--contains all asteroids data-->
+<!doctype html>
+{% extends "base.html" %}
+
+{% block title %}Upload{% endblock %}
+
+	{% block mainblock %}
+		<!--Errors container-->
+		{% if args and 'responseMessage' in args %}
+			<div class="main-data-block response-message-color info-strong">{{ args.responseMessage }}</div>
+		{% endif %}
+		<div class="main-data-block">
+			<form action="/" method="POST" enctype="multipart/form-data">				
+				<div class="main-data-block-item"><label for="fileName">File name* : </label><input type="text" id="fileName" name="fileName"></div>
+				<div class="main-data-block-item tip-small-font">*Tip 1: If File name field left blank - initial file name will used</div>
+				<div class="main-data-block-item tip-small-font">*Tip 2: Please input file name into File name field without extension</div>
+				<div class="main-data-block-item"><input type="file" name="file"></div>
+				<div class="main-data-block-item"><button type="submit">Upload photo</button></div>
+				<div class="main-data-block-item">Click <a href="/readme">here</a> to read detailed instructions</div>
+			</form>
+		</div>
+		<!--Uploaded photos container-->
+		{% if args and 'imagesList' in args %}
+			{% if 'errorMessage' in args.imagesList[0] %}
+				<div class="main-data-block">
+					{{ args.imagesList[0].errorMessage }}
+				</div>
+			{% else %}
+				<div class="main-data-block">
+					<form action="/" method="POST" enctype="multipart/form-data">
+						<table border="1" class="table-class">
+							<tr>
+								<th>Preview</th>
+								<th>Photo Name</th>
+								<th>EXIF Camera Make</th>
+								<th>EXIF Camera Model</th>
+								<th>File size</th>
+								<th>Date Created</th>
+								<th>Date Uploaded</th>
+								<th>Delete?</th>
+							</tr>
+							
+							{% for item in args.imagesList %}
+								<tr>
+									<td><a href="{{ item.normal }}" target="_blank"><img src="{{ item.thumbnail }}"></a></td>
+									<td> {{ item.name }} </td>
+									<td> {{ item.CameraMake }} </td>
+									<td> {{ item.CameraModel }} </td>
+									<td> {{ item.size }} </td>
+									<td> {{ item.DateCreated }} </td>
+									<td> {{ item.UploadedDate }} </td>
+									<td><button type="submit" name="delete" value="{{ item.name }}">Delete</button></td>
+								</tr>
+								
+							{% endfor %}
+						</table>
+					</form>
+				</div>
+			{% endif %}
+		{% endif %}
+	{% endblock %}
