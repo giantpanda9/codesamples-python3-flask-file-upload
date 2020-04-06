@@ -31,3 +31,7 @@ To demonstrate ability to create web application on Python Flask as part of home
 1) Camera Make and Camera Model being displayed only if available in EXIF data otherwise "Not Available" text being displayed
 2) Photo Created or Photo Digitized Date being displayed only if available in EXIF data otherwise "Not Available" text being displayed
 3) Consider reading detailed instruction available by the link on the main page after you will run the project
+# Notes
+1) Why hachoir used instead of PIL:
+Bug on Python 3.6 and PIL with reading EXIF data: https://github.com/python-pillow/Pillow/issues/2944
+Another similar report - not reading EXIF data in all files: https://github.com/python-pillow/Pillow/issues/518
