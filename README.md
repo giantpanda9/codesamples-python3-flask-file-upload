@@ -23,7 +23,7 @@ To demonstrate ability to create web application on Python Flask as part of home
 9) sudo ufw allow 5000
 10) python app.py
 11) [optional, done playing?] deactivate
-12) [optional] You may also clone the project into you project, but you would need to create your own virtuenv in there or install requirements into your virtual environment Linux OS
+12) [optional] You may also clone the project into you project, but you would need to create your own virtuenv in there or install requirements into your virtual environment Linux OS, [update] which is more preferable way now as you will get a precise version of virtualenv setup for the project - unless you want this project on non Debian based OS - in this case consult virtualenv documentation for your non-Debian based OS
 # How to run?
 1) 127.0.0.1:5000/ - main page
 2) http://127.0.0.1:5000/readme - detailed instruction on how to use - link shoudl be on main page
