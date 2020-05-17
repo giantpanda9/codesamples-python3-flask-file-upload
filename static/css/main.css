@@ -1,8 +1,22 @@
 .custom-header-container {
 	display: flex;
 	justify-content: center;
-	background-color: silver;
+	background-color: #44B78B;
 	border-radius: 25px;
+	background: url('/static/staticImages/Logo.png') 0 0;
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+	background-size: contain;
+}
+
+.custom-header-container h1 {
+	border: 1px solid black;
+	border-radius: 25px;
+	background-color: silver;
+	width: 10em;
+	text-align: center;
+	opacity: 75%;
 }
 
 .custom-wrapper li{
