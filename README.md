@@ -3,7 +3,7 @@ Python 3 Flask File Uploading App in virtualenv
 # Description
 File Uploading web application in style of Photo Storage 
 # Purposes
-To demonstrate ability to create web application on Python Flask as part of homework to get Python Developer positio
+To demonstrate ability to create web application on Python Flask as part of homework to get Python Developer position
 # Requirements
 1) Python 3
 2) Flask
